@@ -13,7 +13,7 @@ int main(void)
 	uint16_t Addr;
 	uint8_t radio_channel;
 	uint16_t radio_panID;
-	uint8_t i=0;
+	
 	Type = Type_Light;
 	Addr = 0x0001;
 	radio_channel = 25;
