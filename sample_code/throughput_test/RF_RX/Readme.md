@@ -12,7 +12,7 @@ main.c 主要調整參數
  
 
 
-### 1個收送7個送
+### 1個收, 7個送
 
 * Receiver address: 0x00F1
 * ID 0:  Transmitter address: 0x0001
