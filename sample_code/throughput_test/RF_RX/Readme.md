@@ -1,14 +1,14 @@
 
 main.c 主要調整參數
 
-\#define ROLE 0**  // this code is for  1: transmitter,  0: receiver   
-\#define MY_DEVICE_ADDR  0x0007   //mainly for transmitter device address (0~7)    
-\#define MY_DEVICE_ID  MY_DEVICE_ADDR   //should be (0~7)  
+\#define ROLE 0    _// this code is for  1: transmitter,  0: receiver_     
+\#define MY_DEVICE_ADDR  0x0007   _//mainly for transmitter device address (0~7)_        
+\#define MY_DEVICE_ID  MY_DEVICE_ADDR   _//should be (0~7)_     
 
 
-\#define TARGET_ADDR 0x00F1   //receiver address  
-\#define MAX_PACKET_COUNT 1000  //transmitter 會送1000個後就停止傳送   
-\#define MAX_RECV_COUNT 400  //收到多少個封包,就結算throughput    
+\#define TARGET_ADDR 0x00F1   _//receiver address_    
+\#define MAX_PACKET_COUNT 1000  _//transmitter 會送1000個後就停止傳送_  
+\#define MAX_RECV_COUNT 400  _//收到多少個封包後,就結算throughput_    
  
 
 
@@ -61,5 +61,5 @@ ID COUNT SEQ T1 T2
 
 # 計算每個Device的throughput
 
-throughput=(packet_count\*64)/(T2-T1)*100ms  <br>
+throughput=(packet_count\*64)/((T2-T1)*100ms)     
 packet_count=MAX_RECV_COUNT(we set to 400)
