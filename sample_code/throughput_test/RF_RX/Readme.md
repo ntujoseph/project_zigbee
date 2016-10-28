@@ -15,14 +15,14 @@ main.c 主要調整參數
 ### 1個收, 8個送
 
 * Receiver address: 0x00F1
-* ID 1:  Transmitter address: 0x0001
-* ID 2:  Transmitter address: 0x0002
-* ID 3:  Transmitter address: 0x0003
-* ID 4:  Transmitter address: 0x0004
-* ID 5:  Transmitter address: 0x0005
-* ID 6:  Transmitter address: 0x0006
-* ID 7:  Transmitter address: 0x0007
-* ID 8:  Transmitter address: 0x0008
+* ID 1:  Transmitter address: 0x0001   
+* ID 2:  Transmitter address: 0x0002   
+* ID 3:  Transmitter address: 0x0003  
+* ID 4:  Transmitter address: 0x0004  
+* ID 5:  Transmitter address: 0x0005  
+* ID 6:  Transmitter address: 0x0006   
+* ID 7:  Transmitter address: 0x0007   
+* ID 8:  Transmitter address: 0x0008   
 
 ### 封包格式
 
