@@ -4,14 +4,14 @@
 #include <stdio.h>
 #include "autonet.h"
 
-#define ROLE 0  //  1: transmitter,  0: receiver
-#define MY_DEVICE_ADDR  0x0007   //mainly for transmitter
+#define ROLE 0 //  1: transmitter,  0: receiver
+#define MY_DEVICE_ADDR  0x0008   //mainly for transmitter
 #define MY_DEVICE_ID  MY_DEVICE_ADDR   //should be (0~7)
 
-
+#define DEBUG 0
 #define TARGET_ADDR 0x00F1   //receiver address
 #define MAX_PACKET_COUNT 1000
-#define MAX_RECV_COUNT 400
+#define MAX_RECV_COUNT 100
 #define PAN_ID  0x0007
 #define RADIO_CHANNEL  25
 #define PRINT_BUFSIZE 128
@@ -28,7 +28,7 @@ typedef struct _packet
 	
 }Packet;
 
-	
+	  
 
 typedef struct _record {
   
@@ -41,7 +41,7 @@ typedef struct _record {
 	
 } Record;
 
-Record report[8]={0};
+Record report[10]={0};
 
 //------------------
 
@@ -129,18 +129,19 @@ int main(void)
 			if (report[id].packet_count<MAX_RECV_COUNT) {			
 			
 			if(report[id].packet_count==0) {
+					report[id].dev_id=id;
 			  report[id].t1=timer_count; //time for the first one
 			}
 			
-			
+		
 			report[id].packet_count++;
 		
 			report[id].last_seq_no=pkt->seq_no;		
 	  	report[id].t2=timer_count; // now
-			
-		  sprintf((char *)output_array,"%d %d %d %d\r\n",id,pkt->seq_no,report[id].packet_count,timer_count);
+			#if DEBUG==1
+		  sprintf((char *)output_array,"%d %d %d %d %d\r\n",id,pkt->seq_no,report[id].packet_count,timer_count,report[id].finish);
 		  debug_print(output_array);			
-   
+      #endif
 		  } else if (report[id].packet_count==MAX_RECV_COUNT && report[id].finish==0) {				
 		 	    show_report(id);
 				  report[id].finish=1;
