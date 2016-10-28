@@ -12,17 +12,17 @@ main.c 主要調整參數
 ``` 
 
 
-### 1個收, 7個送
+### 1個收, 8個送
 
 * Receiver address: 0x00F1
-* ID 0:  Transmitter address: 0x0001
-* ID 1:  Transmitter address: 0x0002
-* ID 2:  Transmitter address: 0x0003
-* ID 3:  Transmitter address: 0x0004
-* ID 4:  Transmitter address: 0x0005
-* ID 5:  Transmitter address: 0x0006
-* ID 6:  Transmitter address: 0x0007
-
+* ID 1:  Transmitter address: 0x0001
+* ID 2:  Transmitter address: 0x0002
+* ID 3:  Transmitter address: 0x0003
+* ID 4:  Transmitter address: 0x0004
+* ID 5:  Transmitter address: 0x0005
+* ID 6:  Transmitter address: 0x0006
+* ID 7:  Transmitter address: 0x0007
+* ID 8:  Transmitter address: 0x0008
 
 ### 封包格式
 
@@ -53,10 +53,24 @@ typedef struct _record {
 } Record;
 ```
 如:
+## N=8, test=100 
 
-
-ID COUNT SEQ T1 T2   
-0  400  568   53  110
+ID COUNT SEQ   T1  T2
+ 8  100  141   65  85
+ID COUNT SEQ   T1  T2
+ 1  100  183   65  93
+ID COUNT SEQ   T1  T2
+ 2  100  264   65  100
+ID COUNT SEQ   T1  T2
+ 3  100  215   70  100
+ID COUNT SEQ   T1  T2
+ 7  100  250   70  105
+ID COUNT SEQ   T1  T2
+ 6  100  285   69  113
+ID COUNT SEQ   T1  T2
+ 5  100  335   67  115
+ID COUNT SEQ   T1  T2
+ 4  100  325   67  117
 
 
 # 計算每個Device的throughput
